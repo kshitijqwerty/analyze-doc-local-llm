@@ -1,0 +1,5 @@
+fastapi
+pypdf
+uvicorn
+requests
+python-multipart
