@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ai-backend
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - OLLAMA_SERVER_URL=${OLLAMA_SERVER_URL}
+      - OLLAMA_MODEL=${OLLAMA_MODEL}
+      - PDF_CHAR_EXTRACTION_LIMIT=${PDF_CHAR_EXTRACTION_LIMIT}
+
+  frontend:
+    build: 
+      context: ./frontend
+      args:
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+    container_name: ai-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    

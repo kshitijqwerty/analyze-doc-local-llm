@@ -10,6 +10,5 @@ COPY . .
 
 EXPOSE 8000
 
-ENV OLLAMA_SERVER_URL=192.168.1.20
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
