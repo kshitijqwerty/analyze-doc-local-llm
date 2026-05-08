@@ -3,13 +3,13 @@
 ### Build the Docker Image
 
 ```bash
-docker build -t ai-doc-analyzer .
+docker compose build
 ```
 
 ### Run the Container
 
 ```bash
-docker run -p 8000:8000 ai-doc-analyzer
+docker compose up -d
 ```
 
 ### Access the Application
@@ -17,7 +17,7 @@ docker run -p 8000:8000 ai-doc-analyzer
 Open your browser and navigate to:
 
 ```text
-http://localhost:8000
+http://<IP>:8000
 ```
 
 ---
