@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -8,6 +8,7 @@ from app.utils import extract_text_from_pdf
 import os
 
 app = FastAPI()
+v1 = APIRouter(prefix="/ai/v1")
 
 
 # Frontend URLs
@@ -25,7 +26,7 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@v1.get("/")
 async def home():
 
     return {
@@ -34,7 +35,7 @@ async def home():
     }
 
 
-@app.post("/upload")
+@v1.post("/upload")
 async def upload_file(
     file: UploadFile = File(...)
 ):
@@ -100,3 +101,5 @@ async def upload_file(
             status_code=500,
             detail=str(e)
         )
+
+app.include_router(v1)

@@ -116,7 +116,7 @@ export default function AIDocAnalyzerLanding() {
     try {
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/upload`,
+        `${process.env.NEXT_PUBLIC_API_URL}/ai/v1/upload`,
         formData,
         {
           headers: {
