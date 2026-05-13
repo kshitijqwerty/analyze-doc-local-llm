@@ -14,7 +14,6 @@ v1 = APIRouter(prefix="/ai/v1")
 # Frontend URLs
 origins = [
     "http://localhost:3000",
-    "https://ai-doc.kgup.me",
     os.getenv("FRONTEND_URL", "http://192.168.1.20:3000")
 ]
 
