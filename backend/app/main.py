@@ -6,6 +6,7 @@ from app.llm import get_analysis_from_llm
 from app.utils import extract_text_from_pdf
 
 import os
+import traceback
 
 app = FastAPI()
 v1 = APIRouter(prefix="/ai/v1")
@@ -96,7 +97,7 @@ async def upload_file(
         raise e
 
     except Exception as e:
-
+        traceback.print_exc()
         raise HTTPException(
             status_code=500,
             detail=str(e)
