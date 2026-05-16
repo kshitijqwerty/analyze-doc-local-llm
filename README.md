@@ -1,8 +1,37 @@
-# NeuralDocs AI
+# NeuralDocs — Local AI Document Intelligence
 
-A simple, self-hostable tool to analyze PDF documents and extract insights using locally hosted LLMs — no cloud APIs, no data leaving your network.
+> Analyse PDFs privately. No cloud. No data leaving your machine. No API keys.
 
-> 🚀 **Live Demo:** [ai-doc.kgup.me](https://ai-doc.kgup.me)
+![NeuralDocs Screenshot](./ai_doc_website.png)
+
+🚀 **Live Demo:** [ai-doc.kgup.me](https://ai-doc.kgup.me)
+
+---
+
+## Why NeuralDocs?
+
+Every PDF analysis tool today sends your documents to OpenAI, Google, or Anthropic.
+That's fine for public data — but not for contracts, medical records, research papers,
+or internal reports.
+
+NeuralDocs runs entirely on your own hardware. The LLM inference stays local via Ollama,
+your files never leave your machine, and the whole stack deploys with a single
+`docker compose up`.
+
+**Built for:**
+- Developers who want a self-hosted alternative to ChatPDF or Adobe AI
+- Teams handling sensitive documents (legal, medical, financial)
+- Anyone running a home server, VPS, or Proxmox node who wants real AI tooling
+
+---
+
+## What it does
+
+- 📄 Upload any PDF and get structured summaries instantly
+- 💬 Ask questions about the document — get precise, cited answers
+- 🔒 100% local inference via Ollama (Llama 3, Mistral, Phi-3 — your choice)
+- 🚀 One-command deployment via Docker Compose
+- 🖥️ Runs on a VPS, Proxmox, bare-metal, or your laptop
 
 ---
 
