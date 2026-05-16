@@ -2,32 +2,34 @@
 
 A simple, self-hostable tool to analyze PDF documents and extract insights using locally hosted LLMs — no cloud APIs, no data leaving your network.
 
+> 🚀 **Live Demo:** [ai-doc.kgup.me](https://ai-doc.kgup.me)
+
 ---
 
 ## How It Works
 
 ```
-┌──────────────────────┐
-│      PDF Upload      │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Text Extraction     │
-│      (pypdf)         │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│   LLM Processing     │
-│ (Ollama + Llama 3)   │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Structured Analysis  │
-│       Response       │
-└──────────────────────┘
+                                        ┌──────────────────────┐
+                                        │      PDF Upload      │
+                                        └──────────┬───────────┘
+                                                │
+                                                ▼
+                                        ┌──────────────────────┐
+                                        │  Text Extraction     │
+                                        │      (pypdf)         │
+                                        └──────────┬───────────┘
+                                                │
+                                                ▼
+                                        ┌──────────────────────┐
+                                        │   LLM Processing     │
+                                        │ (Ollama + Llama 3)   │
+                                        └──────────┬───────────┘
+                                                │
+                                                ▼
+                                        ┌──────────────────────┐
+                                        │ Structured Analysis  │
+                                        │       Response       │
+                                        └──────────────────────┘
 ```
 
 Upload a PDF → text is extracted and sent to your local Ollama instance → the LLM returns structured insights directly in the browser.
